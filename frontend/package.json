@@ -3,30 +3,33 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0 <25"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "npx vite build",
+    "preview": "npx vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "axios": "latest",
-    "framer-motion": "latest",
-    "i18next": "latest",
-    "i18next-browser-languagedetector": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-i18next": "latest",
-    "react-icons": "latest",
-    "react-router-dom": "latest"
+    "axios": "1.16.1",
+    "framer-motion": "12.40.0",
+    "i18next": "26.2.0",
+    "i18next-browser-languagedetector": "8.2.1",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-i18next": "17.0.8",
+    "react-icons": "5.6.0",
+    "react-router-dom": "7.15.1"
   },
   "devDependencies": {
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-plugin-react-hooks": "latest",
-    "eslint-plugin-react-refresh": "latest",
-    "postcss": "latest",
-    "tailwindcss": "^3.4.17",
-    "vite": "^8.0.14"
+    "@vitejs/plugin-react": "6.0.2",
+    "autoprefixer": "10.5.0",
+    "eslint": "10.4.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.2",
+    "postcss": "8.5.15",
+    "tailwindcss": "3.4.19",
+    "vite": "8.0.14"
   }
 }

@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa6';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import KCCServices from './pages/KCCServices';
-import LegalServices from './pages/LegalServices';
-import Contact from './pages/Contact';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const KCCServices = lazy(() => import('./pages/KCCServices'));
+const LegalServices = lazy(() => import('./pages/LegalServices'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function Loader() {
   return (
@@ -42,15 +43,17 @@ export default function App() {
     <>
       <AnimatePresence>{loading && <Loader />}</AnimatePresence>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/kcc-services" element={<KCCServices />} />
-        <Route path="/banking-services" element={<LegalServices />} />
-        <Route path="/legal-services" element={<LegalServices />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/kcc-services" element={<KCCServices />} />
+          <Route path="/banking-services" element={<LegalServices />} />
+          <Route path="/legal-services" element={<LegalServices />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Suspense>
       <a
         href="https://wa.me/916266383257"
         target="_blank"
