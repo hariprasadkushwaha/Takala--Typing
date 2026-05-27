@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FaArrowRight, FaCircleCheck, FaQuoteLeft } from 'react-icons/fa6';
 import Hero from '../components/Hero';
+import PopularFarmerBankingServices from '../components/PopularFarmerBankingServices';
 import ServiceCard from '../components/ServiceCard';
 import { generalServices } from '../servicesData';
 
@@ -39,6 +40,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PopularFarmerBankingServices />
 
       <section className="py-16">
         <div className="section-shell">
